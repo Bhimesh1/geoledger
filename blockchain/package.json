@@ -1,20 +1,25 @@
 {
-  "name": "blockchain",
+  "name": "geoledger-blockchain",
   "version": "1.0.0",
-  "description": "",
+  "description": "Smart contracts for GeoLedger",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "deploy:amoy": "hardhat run scripts/deploy.js --network amoy"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "module",
+  "keywords": [
+    "geoledger",
+    "blockchain",
+    "solidity",
+    "hardhat",
+    "polygon-amoy"
+  ],
+  "author": "Bhimesh Patil",
+  "license": "MIT",
   "devDependencies": {
-    "@nomicfoundation/hardhat-toolbox": "^7.0.0",
-    "@types/node": "^22.19.19",
-    "dotenv": "^17.4.2",
-    "hardhat": "^3.5.1",
-    "typescript": "~6.0.3"
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "dotenv": "^16.4.5",
+    "hardhat": "^2.22.17"
   }
 }
