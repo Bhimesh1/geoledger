@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# GeoLedger Frontend
 
-## Getting Started
+This folder contains the frontend web application for GeoLedger.
 
-First, run the development server:
+The frontend allows users to:
+
+* Connect MetaMask wallet
+* Upload geospatial datasets
+* View owned datasets
+* Grant access to other wallet addresses
+* Download and decrypt authorized datasets
+* Visualize GeoJSON data on a map
+* View audit and access history
+
+## Tech Stack
+
+* Next.js
+* React
+* TypeScript
+* Tailwind CSS
+* Leaflet.js
+* React Leaflet
+* ethers.js
+* Axios
+
+## Setup
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+## Environment Variables
+
+Create a local `.env.local` file.
+
+Example:
+
+```env
+NEXT_PUBLIC_API_BASE_URL=http://127.0.0.1:8000
+NEXT_PUBLIC_CHAIN_ID=80002
+NEXT_PUBLIC_CHAIN_NAME=Polygon Amoy
+NEXT_PUBLIC_CONTRACT_ADDRESS=
+```
+
+Do not commit `.env.local`.
+
+## Run the Frontend
+
+From the `frontend/` folder:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The frontend will run at:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Build
 
-## Learn More
+```bash
+npm run build
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Start Production Build
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run start
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Important Notes
 
-## Deploy on Vercel
+The frontend depends on:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+* Backend API running on port `8000`
+* MetaMask installed in the browser
+* Smart contract address configured after deployment
