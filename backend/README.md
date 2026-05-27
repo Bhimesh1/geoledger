@@ -193,3 +193,28 @@ After running the backend, check database health at:
 http://127.0.0.1:8000/api/v1/database/health
 ```
 
+## Encryption Services
+
+GeoLedger uses a hybrid encryption model.
+
+- AES-256-GCM encrypts geospatial file bytes.
+- RSA encrypts AES keys for authorized users.
+- SHA-256 hashes are used for file integrity verification.
+
+Encryption service file:
+
+```text
+app/services/encryption_service.py
+```
+
+Run encryption tests:
+
+```
+pytest tests/test_encryption_service.py
+```
+
+If import errors happen, run:[For temporary testing purposes only - not needed when running the backend normally]
+```
+$env:PYTHONPATH="."
+pytest
+```

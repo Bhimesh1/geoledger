@@ -11,3 +11,4 @@ cryptography
 requests
 python-multipart
 geoalchemy2
+pytest
