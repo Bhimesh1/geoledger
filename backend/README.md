@@ -143,3 +143,53 @@ Run tests with:
 ```bash
 pytest
 ```
+
+## Database Setup
+
+GeoLedger uses PostgreSQL with PostGIS.
+
+## Local Development Database
+
+```bash
+Database: geoledger
+Username: geoledger
+Password: geoledger
+Port: 5432
+```
+
+## Database URL
+
+```env
+DATABASE_URL=postgresql://geoledger:geoledger@localhost:5432/geoledger
+```
+
+## Run Migrations
+
+Apply all pending migrations:
+
+```bash
+alembic upgrade head
+```
+
+## Create a New Migration After Model Changes
+
+After changing SQLAlchemy models, create a new migration with:
+
+```bash
+alembic revision --autogenerate -m "migration message"
+```
+
+Then apply it:
+
+```bash
+alembic upgrade head
+```
+
+## Database Health Check
+
+After running the backend, check database health at:
+
+```text
+http://127.0.0.1:8000/api/v1/database/health
+```
+
