@@ -218,3 +218,33 @@ If import errors happen, run:[For temporary testing purposes only - not needed w
 $env:PYTHONPATH="."
 pytest
 ```
+
+## IPFS Storage Service
+
+GeoLedger stores encrypted geospatial files on IPFS.
+
+For the MVP, the backend uses Pinata as the IPFS pinning provider.
+
+Required environment variables:
+
+```env
+PINATA_JWT=your_pinata_jwt_here
+PINATA_UPLOAD_URL=https://api.pinata.cloud/pinning/pinFileToIPFS
+PINATA_GATEWAY_URL=https://gateway.pinata.cloud/ipfs
+```
+
+IPFS service file:
+```
+app/services/ipfs_service.py
+```
+
+Run IPFS tests:
+```
+pytest tests/test_ipfs_service.py
+```
+
+Important: only encrypted files should be uploaded to IPFS.
+
+
+
+

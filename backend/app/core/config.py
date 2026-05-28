@@ -15,6 +15,10 @@ class Settings(BaseSettings):
         "http://127.0.0.1:3000",
     ]
 
+    pinata_jwt: str = ""
+    pinata_upload_url: str = "https://api.pinata.cloud/pinning/pinFileToIPFS"
+    pinata_gateway_url: str = "https://gateway.pinata.cloud/ipfs"
+
     model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8")
 
 
